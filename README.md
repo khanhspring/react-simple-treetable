@@ -1,5 +1,7 @@
 ### React simple tree table
 
+#### [Demo](https://khanhspring.github.io/react-simple-treetable-demo/)
+
 #### Advantages
 - Dynamic columns
 - Tree table view
@@ -7,9 +9,7 @@
 - Toggle all
 - Light weight (only reactjs, css)
 - Easy to custom
-
-![image](https://drive.google.com/uc?export=view&id=1JvrHaXrX8g7LZmM3Jo3Dvh5E5m3rvWiU)
-![image](https://drive.google.com/uc?export=view&id=169vM2iYHXLThZqaER0u5DOZ1sDKi-HAk)
+- Custom redering for cell of column
 
 #### Usage
 
