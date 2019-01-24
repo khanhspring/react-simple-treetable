@@ -6,7 +6,6 @@ import {createRows} from './utils/tree-table.util';
 class TreeTable extends Component {
 	static defaultProps = {
 		items: [],
-		isCloseAll: undefined,
 	};
 
 	constructor(props) {
@@ -15,6 +14,12 @@ class TreeTable extends Component {
 			roots: flatListToTree(this.props.items),
 			toggleMap: {}
 		};
+	}
+
+    componentDidMount() {
+		if (this.props.closeAll) {
+            this.closeAll();
+		}
 	}
 
 	onToggleClick = (toggleId) => {
@@ -28,7 +33,6 @@ class TreeTable extends Component {
 		for (let key in toggleMap) {
 			toggleMap[key] = true;
 		}
-		console.log(toggleMap);
 		this.setState({toggleMap});
 	};
 
@@ -41,7 +45,6 @@ class TreeTable extends Component {
 	};
 
 	render() {
-
 		const columns = this.props.columns.map(col => {
 			let style = {};
 			if (col.width) {
@@ -86,7 +89,7 @@ class TreeTable extends Component {
 TreeTable.propTypes = {
 	items: PropTypes.array,
 	columns: PropTypes.array,
-	toggleFn: PropTypes.func
+	closeAll: PropTypes.bool
 };
 
 export default TreeTable;

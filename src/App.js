@@ -155,6 +155,7 @@ class App extends Component {
           <TreeTable
               items={items}
               columns={columns}
+              closeAll={true}
               ref={instance => { this.treeTable = instance; }}
           />
         </div>
