@@ -5,101 +5,117 @@ const items = [
   {
     id: 1,
     priority: <span>1</span>,
-    from: 'xuankhanhyb1@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'Lorem Ipsum is simply dummy text of the printing',
-    sentDate: '12/01/2019'
+    sentDate: '01/01/2019'
   },
   {
     id: 2,
     priority: <span>2</span>,
-    from: 'xuankhanhyb2@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 1
   },
   {
     id: 3,
     priority: <span>3</span>,
-    from: 'xuankhanhyb3@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 1
   },
   {
     id: 4,
     priority: <span>4</span>,
-    from: 'xuankhanhyb4@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 3
   },
   {
     id: 5,
     priority: <span>5</span>,
-    from: 'xuankhanhyb5@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019'
+    sentDate: '01/01/2019'
   },
   {
     id: 6,
     priority: <span>6</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019'
+    sentDate: '01/01/2019'
   },
   {
     id: 7,
     priority: <span>7</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 3
   },
   {
     id: 8,
     priority: <span>8</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 3
   },
   {
     id: 9,
     priority: <span>9</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 3
   },
   {
     id: 10,
     priority: <span>10</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 8
   },
   {
     id: 11,
     priority: <span>11</span>,
-    from: 'xuankhanhyb6@gmail.com',
+    from: 'reacttreetable@simple.com',
     subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
+    sentDate: '01/01/2019',
     parentId: 8
   },
-  {
-    id: 12,
-    priority: <span>12</span>,
-    from: 'xuankhanhyb6@gmail.com',
-    subject: 'It is a long established fact that a reader will be distracted',
-    sentDate: '12/01/2019',
-    parentId: 10
-  }];
+    {
+        id: 12,
+        priority: <span>12</span>,
+        from: 'reacttreetable@simple.com',
+        subject: 'It is a long established fact that a reader will be distracted',
+        sentDate: '01/01/2019',
+        parentId: 10
+    },
+    {
+        id: 13,
+        priority: <span>13</span>,
+        from: 'reacttreetable@simple.com',
+        subject: 'It is a long established fact that a reader will be distracted',
+        sentDate: '01/01/2019',
+        parentId: 5
+    },
+    {
+        id: 14,
+        priority: <span>14</span>,
+        from: 'reacttreetable@simple.com',
+        subject: 'It is a long established fact that a reader will be distracted',
+        sentDate: '01/01/2019',
+        parentId: 5
+    }];
 
 const columns = [
   {
     key: 'id',
-    name: "#"
+    name: "#",
   },
   {
     key: 'from',
@@ -114,11 +130,17 @@ const columns = [
     key: 'sentDate',
     name: "Sent date",
     width: '150px',
+      render: (row) => {
+        return <input value={row.sentDate} readOnly={true}/>
+    }
   },
   {
     key: 'action',
     name: "##",
     width: '100px',
+    render: (row) => {
+        return <button onClick={() => alert(row.id)}>Click me</button>
+    }
   }
 ];
 

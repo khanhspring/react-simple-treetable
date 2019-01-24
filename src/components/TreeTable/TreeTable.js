@@ -37,7 +37,6 @@ class TreeTable extends Component {
 		for (let key in toggleMap) {
 			toggleMap[key] = false;
 		}
-		console.log(toggleMap);
 		this.setState({toggleMap});
 	};
 
@@ -60,7 +59,7 @@ class TreeTable extends Component {
 		for (let i = 0; i < this.state.roots.length; i++) {
 			const row = this.state.roots[i];
 			createRows(rows,
-				columns,
+                this.props.columns,
 				row,
 				0,
 				'',

@@ -42,7 +42,14 @@ export const createRows = (rows, columns, currentRow, level, path, toggleFn, tog
 				startOfRow.push(<span key={'last-block'} className="tree-table-space-block last-block"><i /></span>);
 			}
 		}
-		const tdContent = <span className={'tree-table-td-content'}>{currentRow[col.key]}</span>;
+		let renderContent;
+		if (col.render) {
+			renderContent = col.render(currentRow);
+		} else {
+            renderContent = currentRow[col.key]
+		}
+
+		const tdContent = <span className={'tree-table-td-content'}>{renderContent}</span>;
 		return (
 			<td
 				key={col.key}
